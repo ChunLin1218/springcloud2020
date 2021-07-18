@@ -1,0 +1,19 @@
+server:
+  port: 80
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+#设置fegin客户端的超市时间（OpenFegin默认支持ribbon)
+ribbon:
+  #指的是建立连接所用的时间，使用与网络状况正常情况下，两端连接所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接后服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000
+
+loggin:
+
+logging:
+  level:
+    com.ccl.springcloud.service.PaymentFeignService: debug
